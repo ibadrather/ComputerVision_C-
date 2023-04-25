@@ -73,6 +73,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>C:\opencv\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\opencv\build\x64\vc16\lib;$(LibraryPath)</LibraryPath>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -132,7 +133,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="1_load_images_videos_webcam.cpp" />
+    <ClCompile Include="2_basic_functions.cpp" />
+    <ClCompile Include="3_resize_crop.cpp" />
+    <ClCompile Include="4_draw_write.cpp" />
+    <ClCompile Include="5_warping.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="1_load_images_videos_webcam.h" />
+    <ClInclude Include="2_basic_functions.h" />
+    <ClInclude Include="3_resize_crop.h" />
+    <ClInclude Include="4_draw_write.h" />
+    <ClInclude Include="5_warping.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
