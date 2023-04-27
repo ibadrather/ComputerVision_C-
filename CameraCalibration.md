@@ -33,4 +33,4 @@ The distortion coefficients are a set of parameters that account for the radial 
 
 ## 3. Frame Size
 
-The frame size denotes the dimensions of the image captured by the camera. In your output, the frame size is [1440 x 1080], which means the image is 1440 pixels wide and 1080 pixels tall. This is a common aspect ratio for video and images, and it is slightly larger than Full HD resolution (1920x1080).
+The frame size denotes the dimensions of the image captured by the camera. In your output, the frame size is [1440 x 1080], which means the image is 1440 pixels wide and 1080 pixels tall. This is a common aspect ratio for video and images, and it is slightly smaller than Full HD resolution (1920x1080).
