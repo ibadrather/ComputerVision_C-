@@ -7,7 +7,9 @@ This document explains each component of the camera calibration output.
 The intrinsic camera matrix, denoted by `K`, is a 3x3 matrix that describes the internal camera geometry and optical properties. It has the following format:
 
 [fx, 0, cx;
+
 0, fy, cy;
+
 0, 0, 1]
 
 
