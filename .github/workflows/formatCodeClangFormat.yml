@@ -1,0 +1,23 @@
+name: Format C++ Code
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install ClangFormat
+      run: sudo apt-get install -y clang-format
+    - name: Format code
+      run: |
+        find . -iname '*.cpp' -o -iname '*.hpp' -o -iname '*.h' | xargs clang-format -i
+    - name: Commit changes
+      run: |
+        git config --global user.name "Your Name"
+        git config --global user.email "youremail@example.com"
+        git commit -am "Format C++ code"
+        git push
