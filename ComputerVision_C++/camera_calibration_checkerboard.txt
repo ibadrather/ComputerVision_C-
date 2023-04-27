@@ -1,0 +1,8 @@
+Intrinsic Camera Matrix:
+[1187.2505, 0, 719.5;
+ 0, 1187.2505, 539.5;
+ 0, 0, 1]
+Distortion Coefficients:
+[-0.231531, 0.0790088, 0, 0, 0]
+Frame Size:
+[1440 x 1080]

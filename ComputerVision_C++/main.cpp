@@ -153,27 +153,28 @@ int main() {
 
     // 7. ################# Contours #######################################
     
-    std::string imagePath = "Resources/shapes.png";
+    //std::string imagePath = "Resources/shapes.png";
 
-    // load color image as BGR
-    cv::Mat bgrImage = loadBGRImage(imagePath);
+    //// load color image as BGR
+    //cv::Mat bgrImage = loadBGRImage(imagePath);
 
-    // preprocessed image for contour detection
-    cv::Mat preprocessedImage = preprocessImageForContourDetection(bgrImage, 50, 100, 3, 1);
+    //// preprocessed image for contour detection
+    //cv::Mat preprocessedImage = preprocessImageForContourDetection(bgrImage, 50, 100, 3, 1);
 
-    // find and draw contours on the original image
-    cv::Mat countouredImage = findAndDrawContours(preprocessedImage, bgrImage);
+    //// find and draw contours on the original image
+    //cv::Mat countouredImage = findAndDrawContours(preprocessedImage, bgrImage);
 
-    // contoured processed image
-    cv::Mat countouredProcessedImage = findAndDrawContours(preprocessedImage, preprocessedImage);
+    //// contoured processed image
+    //cv::Mat countouredProcessedImage = findAndDrawContours(preprocessedImage, preprocessedImage);
 
-    // display the image
-    cv::imshow("Original Image 4", bgrImage);
-    cv::imshow("Preprocessed Image", preprocessedImage);
-    cv::imshow("Countoured Original Image", countouredImage);
-    cv::imshow("Countoured Preprocessed Image", countouredProcessedImage);
-    cv::waitKey(0);
+    //// display the image
+    //cv::imshow("Original Image 4", bgrImage);
+    //cv::imshow("Preprocessed Image", preprocessedImage);
+    //cv::imshow("Countoured Original Image", countouredImage);
+    //cv::imshow("Countoured Preprocessed Image", countouredProcessedImage);
+    //cv::waitKey(0);
     
 
     return 0;
+
     }
