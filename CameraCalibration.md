@@ -2,7 +2,7 @@
 # Camera Calibration Documentation
 This codebase provides a set of functions to perform camera calibration, corner detection, and image undistortion. The following sections describe each function in detail.
 ## 1. getImagePathsFromFolder
-```
+```cpp
 std::vector<std::string> getImagePathsFromFolder(const std::string&amp; folderPath);
 
 ```
