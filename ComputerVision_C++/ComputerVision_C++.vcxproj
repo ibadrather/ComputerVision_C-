@@ -138,6 +138,8 @@
     <ClCompile Include="3_resize_crop.cpp" />
     <ClCompile Include="4_draw_write.cpp" />
     <ClCompile Include="5_warping.cpp" />
+    <ClCompile Include="6_color_detection.cpp" />
+    <ClCompile Include="7_shape_contour_detection.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +148,8 @@
     <ClInclude Include="3_resize_crop.h" />
     <ClInclude Include="4_draw_write.h" />
     <ClInclude Include="5_warping.h" />
+    <ClInclude Include="6_color_detection.h" />
+    <ClInclude Include="7_shape_contour_detection.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

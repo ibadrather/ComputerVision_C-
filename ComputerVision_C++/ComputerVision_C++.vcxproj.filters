@@ -33,6 +33,12 @@
     <ClCompile Include="5_warping.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="6_color_detection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="7_shape_contour_detection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1_load_images_videos_webcam.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="5_warping.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="6_color_detection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="7_shape_contour_detection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

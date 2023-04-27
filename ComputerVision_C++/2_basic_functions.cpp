@@ -5,10 +5,16 @@
 #include <opencv2/highgui.hpp>
 #include "2_basic_functions.h"
 
-// load color image as BGR
+// Load color image as BGR
 cv::Mat loadBGRImage(const std::string& imagePath)
 {
 	cv::Mat image = cv::imread(imagePath, cv::IMREAD_COLOR);
+
+	if (image.empty()) {
+		std::cerr << "Error loading the image at: " << imagePath << std::endl;
+		return cv::Mat(); // Return an empty cv::Mat instead of -1
+	}
+
 	return image;
 }
 

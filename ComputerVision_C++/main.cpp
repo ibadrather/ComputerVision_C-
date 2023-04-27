@@ -2,12 +2,16 @@
 #include <string>
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
 
 #include "1_load_images_videos_webcam.h"
 #include "2_basic_functions.h"
 #include "3_resize_crop.h"
 #include "4_draw_write.h"
 #include "5_warping.h"
+#include "6_color_detection.h"
+#include "7_shape_contour_detection.h"
 
 
 int main() {
@@ -91,22 +95,22 @@ int main() {
     //// draw a cicrle on the blank image
     //cv::Point center(256, 256);
     //int radius = 100;
-    //cv::Mat circle_image = drawCircle(blank_image, center, radius, cv::Scalar(255, 0, 255), cv::LineTypes::FILLED);
+    //cv::Mat circle_image = drawCircleOnImage(blank_image, center, radius, cv::Scalar(255, 0, 255), cv::LineTypes::FILLED);
 
     //// draw a rectangle on the circle image
     //cv::Point topLeft(100, 100);
     //cv::Point bottomRight(400, 400);
-    //cv::Mat rectangle_image = drawRectangle(circle_image, topLeft, bottomRight, cv::Scalar(0, 100, 0), cv::LineTypes::FILLED);
+    //cv::Mat rectangle_image = drawRectangleOnImage(circle_image, topLeft, bottomRight, cv::Scalar(0, 100, 0), cv::LineTypes::FILLED);
 
     //// draw a line on the rectangle image
     //cv::Point start(100, 100);
     //cv::Point end(400, 400);
-    //cv::Mat line_image = drawLine(rectangle_image, start, end, cv::Scalar(0, 0, 255), 5);
+    //cv::Mat line_image = drawLineOnImage(rectangle_image, start, end, cv::Scalar(0, 0, 255), 5);
 
     //// put text on the line image
     //std::string text = "Computer Vision with C++";
     //cv::Point origin(100, 90);
-    //cv::Mat text_image = drawText(line_image, text, origin, cv::FONT_HERSHEY_COMPLEX, 0.65, cv::Scalar(0, 0, 0), 1);
+    //cv::Mat text_image = drawTextOnImage(line_image, text, origin, cv::FONT_HERSHEY_COMPLEX, 0.65, cv::Scalar(0, 0, 0), 1);
 
 
     //// display the images
@@ -118,25 +122,58 @@ int main() {
 
     // 5. ############### Image Warping ################
     
-    std::string imagePath = "Resources/cards.png";
-    cv::Mat cardImage = loadBGRImage(imagePath);
+    //std::string imagePath = "Resources/cards.png";
+    //cv::Mat cardImage = loadBGRImage(imagePath);
 
-    // Sequence of points should be top-left, top-right, bottom-left, bottom-right
+    //// Sequence of points should be top-left, top-right, bottom-left, bottom-right
 
-    // define the 4 points of the original image
-    std::vector<cv::Point2f> originalPoints;
-    originalPoints.push_back(cv::Point2f(432, 105));
-    originalPoints.push_back(cv::Point2f(635, 145));
-    originalPoints.push_back(cv::Point2f(330, 320));
-    originalPoints.push_back(cv::Point2f(554, 371));
+    //// define the 4 points of the original image
+    //std::vector<cv::Point2f> originalPoints;
+    //originalPoints.push_back(cv::Point2f(432, 105));
+    //originalPoints.push_back(cv::Point2f(635, 145));
+    //originalPoints.push_back(cv::Point2f(330, 320));
+    //originalPoints.push_back(cv::Point2f(554, 371));
 
-    // warp image
-    cv::Mat warpedImage = warpImage(cardImage, originalPoints, 200, 200);
+    //// warp image
+    //cv::Mat warpedImage = warpImage(cardImage, originalPoints, 200, 200);
 
-    // display the images
-    displayImage(cardImage, "Card Image");
-    displayImage(warpedImage, "Warped Image");
+    //// display the images
+    //displayImage(cardImage, "Card Image");
+    //displayImage(warpedImage, "Warped Image");
 
+
+    // 6. ################# Color Detection #######################################
+    
+    //std::string imagePath = "Resources/lambo.png";
+    //std::string imagePath = "Resources/shapes.png";
+    //cv::Mat bgrImage = loadBGRImage(imagePath);
+
+    //// hsv color selection
+    //interactiveHSVColorRangeSelection(bgrImage);
+
+    // 7. ################# Contours #######################################
+    
+    std::string imagePath = "Resources/shapes.png";
+
+    // load color image as BGR
+    cv::Mat bgrImage = loadBGRImage(imagePath);
+
+    // preprocessed image for contour detection
+    cv::Mat preprocessedImage = preprocessImageForContourDetection(bgrImage, 50, 100, 3, 1);
+
+    // find and draw contours on the original image
+    cv::Mat countouredImage = findAndDrawContours(preprocessedImage, bgrImage);
+
+    // contoured processed image
+    cv::Mat countouredProcessedImage = findAndDrawContours(preprocessedImage, preprocessedImage);
+
+    // display the image
+    cv::imshow("Original Image 4", bgrImage);
+    cv::imshow("Preprocessed Image", preprocessedImage);
+    cv::imshow("Countoured Original Image", countouredImage);
+    cv::imshow("Countoured Preprocessed Image", countouredProcessedImage);
+    cv::waitKey(0);
+    
 
     return 0;
     }
