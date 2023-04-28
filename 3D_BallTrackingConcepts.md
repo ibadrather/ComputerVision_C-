@@ -37,24 +37,24 @@ Remember to test your algorithm on various scenarios to ensure its robustness an
 Intrinsic and extrinsic parameters are important for accurately reconstructing the 3D position of the ball from 2D images captured by the cameras. Let's discuss what these parameters are and why they are needed.
 
 1. **Intrinsic parameters**: These parameters describe the internal characteristics of the camera, such as its focal length, optical center (principal point), and lens distortion. They are specific to each camera and typically remain constant. The intrinsic parameters are represented in a 3x3 matrix called the camera matrix (K). The main components of this matrix are:
-    * Focal length (fx, fy): The distance between the camera's optical center and the image sensor, expressed in pixels. The focal length determines the magnification of the image.
-    
-    * Principal point (cx, cy): The coordinates of the optical center (image center) in the image coordinate system.
-    
-    * Lens distortion coefficients: Radial and tangential distortion coefficients that describe the distortion introduced by the camera lens. These coefficients are used to undistort the images for accurate 3D reconstruction.
+* Focal length (fx, fy): The distance between the camera's optical center and the image sensor, expressed in pixels. The focal length determines the magnification of the image.
+
+* Principal point (cx, cy): The coordinates of the optical center (image center) in the image coordinate system.
+
+* Lens distortion coefficients: Radial and tangential distortion coefficients that describe the distortion introduced by the camera lens. These coefficients are used to undistort the images for accurate 3D reconstruction.
 
 2. **Extrinsic parameters**: These parameters describe the position and orientation of the camera in the world coordinate system. They are represented as a rotation matrix (R) and a translation vector (t). In a stereo camera setup, you need the extrinsic parameters to relate the coordinate systems of the two cameras.
-    * Rotation matrix (R): A 3x3 matrix that represents the rotation of the camera coordinate system relative to the world coordinate system.
+* Rotation matrix (R): A 3x3 matrix that represents the rotation of the camera coordinate system relative to the world coordinate system.
 
-    * Translation vector (t): A 3x1 vector that represents the translation of the camera's optical center from the world coordinate system origin.
+* Translation vector (t): A 3x1 vector that represents the translation of the camera's optical center from the world coordinate system origin.
 
 These parameters are crucial for the following reasons:
 
-    * They allow you to project 3D points from the world coordinate system into the 2D image plane of each camera.
-    
-    * They help rectify the stereo images, aligning the epipolar lines and simplifying the search for correspondences between the two images.
-    
-    * They enable the calculation of the 3D position of the ball by triangulation, using the 2D positions in the images and the disparity between the two cameras.By calibrating your cameras and obtaining these intrinsic and extrinsic parameters, you can accurately reconstruct the 3D position of the ball in the world coordinate system using the captured 2D images.
+* They allow you to project 3D points from the world coordinate system into the 2D image plane of each camera.
+
+* They help rectify the stereo images, aligning the epipolar lines and simplifying the search for correspondences between the two images.
+
+* They enable the calculation of the 3D position of the ball by triangulation, using the 2D positions in the images and the disparity between the two cameras.By calibrating your cameras and obtaining these intrinsic and extrinsic parameters, you can accurately reconstruct the 3D position of the ball in the world coordinate system using the captured 2D images.
 
 
 # 2.  Synchronize the cameras
