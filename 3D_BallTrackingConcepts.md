@@ -341,13 +341,13 @@ The Kalman filter is a recursive algorithm that estimates the current state of a
 
 To implement the Kalman filter, follow these steps:
 
-a. Initialize the Kalman filter with appropriate parameters, such as the state transition matrix, observation matrix, and initial state.
+* a. Initialize the Kalman filter with appropriate parameters, such as the state transition matrix, observation matrix, and initial state.
 
-b. For each new measurement of the 3D position, perform the prediction step to estimate the next state based on the previous state and the state transition model.
+* b. For each new measurement of the 3D position, perform the prediction step to estimate the next state based on the previous state and the state transition model.
 
-c. Perform the update step to incorporate the new measurement and correct the state estimate by minimizing the error between the predicted state and the true state.
+* c. Perform the update step to incorporate the new measurement and correct the state estimate by minimizing the error between the predicted state and the true state.
 
-d. Extract the filtered 3D position from the updated state.
+* d. Extract the filtered 3D position from the updated state.
 
 2. **Moving average**:
 
@@ -355,11 +355,11 @@ The moving average is a simple technique that computes the average of a sliding 
 
 To implement the moving average, follow these steps:
 
-a. Choose the window size for the moving average, which determines how many previous data points will be used for averaging.
+* a. Choose the window size for the moving average, which determines how many previous data points will be used for averaging.
 
-b. For each new measurement of the 3D position, add it to the buffer containing the last N measurements (where N is the window size). If the buffer is full, remove the oldest measurement to make room for the new one.
+* b. For each new measurement of the 3D position, add it to the buffer containing the last N measurements (where N is the window size). If the buffer is full, remove the oldest measurement to make room for the new one.
 
-c. Calculate the average of the X, Y, and Z coordinates in the buffer to obtain the smoothed 3D position.
+* c. Calculate the average of the X, Y, and Z coordinates in the buffer to obtain the smoothed 3D position.
 
 Both of these techniques can help you obtain smoother 3D trajectories for the ball's position. The choice between them depends on your specific use case and requirements. The Kalman filter is more sophisticated and can handle non-linear systems, but it requires more tuning and computational resources. On the other hand, the moving average is simpler to implement and computationally efficient, but it may not be as effective at handling rapid changes in the ball's motion.
 
