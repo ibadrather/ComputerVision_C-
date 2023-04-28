@@ -39,7 +39,10 @@
     <ClCompile Include="8_callibration_checkerboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main_2.cpp">
+    <ClCompile Include="9_pose_tracking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main_ball_position_tracking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="8_callibration_checkerboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="9_pose_tracking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

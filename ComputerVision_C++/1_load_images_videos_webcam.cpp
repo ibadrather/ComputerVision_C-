@@ -64,3 +64,42 @@ void displayWebcam(int cameraId) {
         }
     }
 }
+
+
+/**
+ * @brief Loads video frames from a given video file into a vector of cv::Mat objects.
+ *
+ * @param videoPath The path to the video file.
+ * @return std::vector<cv::Mat> A vector containing the video frames.
+ */
+std::vector<cv::Mat> loadVideoFrames(const std::string& videoPath) {
+    cv::VideoCapture video(videoPath);
+
+    if (!video.isOpened()) {
+        std::cerr << "Error: Cannot open the video file." << std::endl;
+        return std::vector<cv::Mat>();
+    }
+
+    std::vector<cv::Mat> frames;
+    cv::Mat frame;
+
+    while (video.read(frame)) {
+        frames.push_back(frame.clone());
+    }
+
+    return frames;
+}
+
+// display video frames
+void displayVideoFrames(const std::vector<cv::Mat>& frames, const std::string& windowName) {
+    if (frames.empty()) {
+		std::cerr << "Error: Cannot display an empty video." << std::endl;
+		return;
+	}
+    for (const cv::Mat& frame : frames) {
+		cv::imshow(windowName, frame);
+        if (cv::waitKey(10) == 27) {
+			break;
+		}
+	}
+}

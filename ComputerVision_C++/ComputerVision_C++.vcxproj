@@ -141,7 +141,8 @@
     <ClCompile Include="6_color_detection.cpp" />
     <ClCompile Include="7_shape_contour_detection.cpp" />
     <ClCompile Include="8_callibration_checkerboard.cpp" />
-    <ClCompile Include="main_2.cpp" />
+    <ClCompile Include="9_pose_tracking.cpp" />
+    <ClCompile Include="main_ball_position_tracking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1_load_images_videos_webcam.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="6_color_detection.h" />
     <ClInclude Include="7_shape_contour_detection.h" />
     <ClInclude Include="8_callibration_checkerboard.h" />
+    <ClInclude Include="9_pose_tracking.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
